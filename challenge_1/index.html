@@ -1,2 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      td {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      #firstRow td {
+        border-top: none;
+      }
+      #thirdRow td {
+        border-bottom: none;
+      }
 
+    </style>
+  </head>
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <button>New Game</button>
+    <table>
+      <tr id='firstRow'>
+        <td class='first major'></td>
+        <td class='second'></td>
+        <td class='third minor'></td>
+      </tr>
+      <tr id='secondRow'>
+        <td class='first'></td>
+        <td class='second minor major'></td>
+        <td class='third'></td>
+      </tr>
+      <tr id='thirdRow'>
+        <td class='first minor'></td>
+        <td class='second'></td>
+        <td class='third major'></td>
+      </tr>
+    </table>
+    <script src='app.js'></script>
+  </body>
+</html>
 
