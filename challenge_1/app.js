@@ -45,7 +45,8 @@ var checkForWin = () => {
 
 var checkForTie = () => {
   var lists = [firstCol, secondCol, thirdCol];
-  //can't use every method for nodeLists
+  //can't use every method (or other array methods) for nodeList list
+  //can use forEach though (NodeList method)
   var isTie =  lists.every( list => isTaken(list[0]) && isTaken(list[1]) && isTaken(list[2]));
   return isTie;
 };
@@ -71,18 +72,19 @@ var play = (place) => {
   }
 };
 
-
 var clickEventHandler = (event) => {
   play(event.target);
 };
 
 
 places.forEach( place => {
+  //don't use anonymous function as callback in event listeners --> can't call removeEventListener using callback later
   place.addEventListener('click', clickEventHandler);
 });
 
 var stopGame = () => {
   places.forEach( place => {
+    //removeEventListener has the same signature as addEventListener
     place.removeEventListener('click', clickEventHandler);
   });
 };
